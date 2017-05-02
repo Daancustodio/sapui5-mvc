@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hello World</title>
+    <script id="sau-ui-bootstrap" 
+    src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js" 
+    data-sap-ui-theme="sap_bluecrystal"
+    data-sap-ui-libs="sap.m"
+    data-sap-ui-resourceroots ='{"sapui5.demo.mvcapp": "./webapp/"}'>
+
+        </script> 
+    <script>
+        var oData = {
+            "Count":"2",
+            "Suppliers" : [
+                {
+                    "ID":0,
+                    "Name": "Exotic Liquid",
+                    "Address":{
+                        "Street":"NE 228th",
+                        "City":"Sammamish",
+                        "State":"WA",
+                        "ZipCode":"98074",
+                        "Country":"USA"
+                    }
+                },
+                {
+                    "ID":1,
+                    "Name": "Tokyo Traders",
+                    "Address":{
+                        "Street":"NE 40th",
+                        "City":"Remmond",
+                        "State":"WA",
+                        "ZipCode":"98052",
+                        "Country":"USA"
+                    }
+                }
+            ]
+        };
+
+        var oModel = sap.ui.model.json.JSONModel();
+        oModel.setData(oData);
+
+        sap.ui.getCore().setModel(oModel);
+
+        var oAppView = sap.ui.view("appview",{
+            type: sap.ui.core.mvc.ViewType.XML,
+            viewName: "sapui5.demo.mvcapp.view.App"
+        });
+
+        var oApp = oAppView.byId("app");
+        oAppView.placeAt("content");
+
+    </script>
+</head>
+
+<body class="sapUiBody" role="application" >
+    <div id="content"></div>
+</body>
+
+</html>

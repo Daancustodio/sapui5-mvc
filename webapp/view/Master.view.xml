@@ -1,0 +1,41 @@
+<mvc:View
+    controllerName="sapui5.demo.mvcapp.controller.Master"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page        
+        title="Supplier Overview">
+        <content>
+            <Table items="{/Suppliers}">
+                <headerToolbar>
+                    <Toolbar>
+                     <Label 
+                            text="Count of Sppliers">                            
+                        </Label>
+                        <Label id="tableHeader"
+                            text="{/Count}">                            
+                        </Label>
+                    </Toolbar>
+                </headerToolbar>
+
+                <columns>
+                    <Column>
+                        <header> <Text text="ID"></Text> </header>
+                    </Column>
+                    <Column>
+                        <header> <Text text="Name"></Text> </header>                        
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem 
+                        type="Navigation"
+                        press="onListPress">
+                        <cells>
+                        <ObjectIdentifier text="{ID}"></ObjectIdentifier>
+                        <ObjectIdentifier text="{Name}"></ObjectIdentifier>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>
